@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{D8E0EF4F-A995-447F-9346-E33694BEE951}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BettingApp</RootNamespace>
+    <AssemblyName>BettingApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\icons\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="data\BetDetailsPrinter.cs" />
+    <Compile Include="data\DatabaseManager.cs" />
+    <Compile Include="data\DataGridPrinter.cs" />
+    <Compile Include="data\repository\AuthenticationRepository.cs" />
+    <Compile Include="data\repository\BetDetailsRepository.cs" />
+    <Compile Include="data\repository\BetsRepository.cs" />
+    <Compile Include="data\repository\MatchRepository.cs" />
+    <Compile Include="data\repository\TeamRepository.cs" />
+    <Compile Include="data\repository\UserRepository.cs" />
+    <Compile Include="data\repository\UtilsRepository.cs" />
+    <Compile Include="form\admin\DashboardIndexForm.cs" />
+    <Compile Include="form\admin\DashboardIndexForm.Designer.cs">
+      <DependentUpon>DashboardIndexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\admin\HistoryAdminForm.cs" />
+    <Compile Include="form\admin\HistoryAdminForm.Designer.cs">
+      <DependentUpon>HistoryAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\admin\match\AdminDashboard.cs">
+      <DependentUpon>ModifyStatusMatchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\admin\match\AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\admin\match\MatchForm.cs" />
+    <Compile Include="form\admin\match\MatchForm.Designer.cs">
+      <DependentUpon>MatchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\admin\match\ModifyStatusMatchForm.cs" />
+    <Compile Include="form\admin\match\ModifyStatusMatchForm.Designer.cs">
+      <DependentUpon>ModifyStatusMatchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\admin\BetAdminForm.cs" />
+    <Compile Include="form\admin\BetAdminForm.Designer.cs">
+      <DependentUpon>BetAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\admin\TeamForm.cs" />
+    <Compile Include="form\admin\TeamForm.Designer.cs">
+      <DependentUpon>TeamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\admin\user\ChangeStatusUserForm.cs" />
+    <Compile Include="form\admin\user\ChangeStatusUserForm.Designer.cs">
+      <DependentUpon>ChangeStatusUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\admin\user\RegisterUserForm.cs" />
+    <Compile Include="form\admin\user\RegisterUserForm.Designer.cs">
+      <DependentUpon>RegisterUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\admin\user\ResetPasswordForm.cs" />
+    <Compile Include="form\admin\user\ResetPasswordForm.Designer.cs">
+      <DependentUpon>ResetPasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\admin\user\UserForm.cs" />
+    <Compile Include="form\admin\user\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\authentification\LoginForm.cs" />
+    <Compile Include="form\authentification\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\authentification\RegisterForm.cs" />
+    <Compile Include="form\authentification\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\MatchInfoForm.cs" />
+    <Compile Include="form\MatchInfoForm.Designer.cs">
+      <DependentUpon>MatchInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\UserAccountForm.cs" />
+    <Compile Include="form\UserAccountForm.Designer.cs">
+      <DependentUpon>UserAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\user\BetForm.cs" />
+    <Compile Include="form\user\BetForm.Designer.cs">
+      <DependentUpon>BetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\user\DashboardUserIndexForm.cs" />
+    <Compile Include="form\user\DashboardUserIndexForm.Designer.cs">
+      <DependentUpon>DashboardUserIndexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\user\HistoryForm.cs" />
+    <Compile Include="form\user\HistoryForm.Designer.cs">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\user\ModifyInfoForm.cs" />
+    <Compile Include="form\user\ModifyInfoForm.Designer.cs">
+      <DependentUpon>ModifyInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\user\UserMatchForm.cs" />
+    <Compile Include="form\user\UserMatchForm.Designer.cs">
+      <DependentUpon>UserMatchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\user\UserDashBoard.cs" />
+    <Compile Include="form\user\UserDashBoard.Designer.cs">
+      <DependentUpon>UserDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="model\Bet.cs" />
+    <Compile Include="model\BetDetail.cs" />
+    <Compile Include="model\Match.cs" />
+    <Compile Include="model\Team.cs" />
+    <Compile Include="model\User.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utils\PasswordHelper.cs" />
+    <Compile Include="utils\StyleForm.cs" />
+    <Compile Include="utils\validation\MatchValidation.cs" />
+    <Compile Include="utils\validation\TeamValidation.cs" />
+    <Compile Include="utils\validation\UserValidation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="data\PhoenixBetDb.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data" />
+    <Folder Include="data\repository" />
+    <Folder Include="form\admin\match" />
+    <Folder Include="form\admin\user" />
+    <Folder Include="form\authentification" />
+    <Folder Include="form\admin" />
+    <Folder Include="form\user" />
+    <Folder Include="model" />
+    <Folder Include="form" />
+    <Folder Include="utils" />
+    <Folder Include="utils\validation" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="form\admin\DashboardIndexForm.resx">
+      <DependentUpon>DashboardIndexForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\admin\HistoryAdminForm.resx">
+      <DependentUpon>HistoryAdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\admin\match\AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\admin\match\MatchForm.resx">
+      <DependentUpon>MatchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\admin\match\ModifyStatusMatchForm.resx">
+      <DependentUpon>ModifyStatusMatchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\admin\BetAdminForm.resx">
+      <DependentUpon>BetAdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\admin\TeamForm.resx">
+      <DependentUpon>TeamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\admin\user\ChangeStatusUserForm.resx">
+      <DependentUpon>ChangeStatusUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\admin\user\RegisterUserForm.resx">
+      <DependentUpon>RegisterUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\admin\user\ResetPasswordForm.resx">
+      <DependentUpon>ResetPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\admin\user\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\authentification\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\authentification\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\MatchInfoForm.resx">
+      <DependentUpon>MatchInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\UserAccountForm.resx">
+      <DependentUpon>UserAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\user\BetForm.resx">
+      <DependentUpon>BetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\user\DashboardUserIndexForm.resx">
+      <DependentUpon>DashboardUserIndexForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\user\HistoryForm.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\user\ModifyInfoForm.resx">
+      <DependentUpon>ModifyInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\user\UserMatchForm.resx">
+      <DependentUpon>UserMatchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\user\UserDashBoard.resx">
+      <DependentUpon>UserDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
